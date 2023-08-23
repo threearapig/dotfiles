@@ -8,4 +8,8 @@
 
 `waybar`:  
 * `swww`: 桌面壁纸
-* `rofi`: 启动程序（后面单独安装）
+
+`hyprland`:  
+* nm-applet
+* pasystray
+* blueman-applet
