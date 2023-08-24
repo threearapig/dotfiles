@@ -1,0 +1,7 @@
+configuration {
+	modes: "drun,run";
+	show-icons: true;
+	icon-theme: "Papirus";
+}
+
+@theme "./themes/dwm.rasi"
