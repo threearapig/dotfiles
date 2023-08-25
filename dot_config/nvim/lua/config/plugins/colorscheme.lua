@@ -1,6 +1,8 @@
 return {
-	"folke/tokyonight.nvim",
+	"theniceboy/nvim-deus",
+	lazy = false,
+	priority = 1000,
 	config = function()
-		vim.cmd[[colorscheme tokyonight-storm]]
+		vim.cmd[[colorscheme deus]]
 	end,
 }
