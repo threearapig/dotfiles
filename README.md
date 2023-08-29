@@ -89,9 +89,7 @@
 
 **installation**
 
-`paru -S neovim-git ripgrep python-pynvim-git nodejs`
-
-
+`paru -S neovim-git ripgrep python-pynvim-git nodejs npm wget unzip`
 
 
 
