@@ -97,6 +97,8 @@
 
 ## Fcitx5
 
+`paru -S fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-zhwiki fcitx5-pinyin-moegirl fcitx5-nord`
+
 
 
 

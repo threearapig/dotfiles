@@ -42,22 +42,24 @@ end
 
 return {
 	"hrsh7th/nvim-cmp",
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
+		"saadparwaiz1/cmp_luasnip",
 		{
-			"quangnguyen30192/cmp-nvim-ultisnips",
-			dependencies = {
-				"SirVer/ultisnips",
-				"honza/vim-snippets",
-			},
+			"L3MON4D3/LuaSnip",
+			dependencies = { "rafamadriz/friendly-snippets" },
 		},
 		"onsails/lspkind.nvim",
 		"hrsh7th/cmp-calc",
 	},
 	config = function()
+		setCompHL()
+		require("luasnip.loaders.from_vscode").lazy_load()
+
 		local has_words_before = function()
 			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -69,18 +71,10 @@ return {
 			return str
 		end
 		local lspkind = require("lspkind")
-		local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
-		local cmp = require 'cmp'
-
-		setCompHL()
+		local luasnip = require("luasnip")
+		local cmp = require('cmp')
 
 		cmp.setup({
-			preselect = cmp.PreselectMode.None,
-			snippet = {
-				expand = function(args)
-					vim.fn["UltiSnips#Anon"](args.body)
-				end,
-			},
 			window = {
 				completion = {
 					col_offset = -3,
@@ -103,89 +97,67 @@ return {
 					return kind
 				end,
 			},
+			snippet = {
+				expand = function(args)
+					require('luasnip').lsp_expand(args.body)
+				end,
+			},
 			mapping = cmp.mapping.preset.insert({
 				['<C-o>'] = cmp.mapping.complete(),
 				['<C-l>'] = cmp.mapping.scroll_docs(-4),
 				['<C-y>'] = cmp.mapping.scroll_docs(4),
-				["<C-e>"] = cmp.mapping(
-					function()
-						cmp_ultisnips_mappings.compose { "expand", "jump_forwards" } (function() end)
-					end,
-					{ "i", "s" }
-				),
-				["<C-n>"] = cmp.mapping(
-					function(fallback)
-						cmp_ultisnips_mappings.jump_backwards(fallback)
-					end,
-					{ "i", "s" }
-				),
+				['<CR>'] = cmp.mapping.confirm({ select = true }),
 				['<ESC>'] = cmp.mapping({
 					i = function(fallback)
 						cmp.close()
 						fallback()
 					end
 				}),
-				['<CR>'] = cmp.mapping({
-					i = function(fallback)
-						if cmp.visible() and cmp.get_active_entry() then
-							cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-						else
-							fallback()
-						end
-					end
-				}),
-				["<Tab>"] = cmp.mapping({
-					i = function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-						elseif has_words_before() then
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+					elseif has_words_before() then
 							cmp.complete()
-						else
+					else
 							fallback()
-						end
-					end,
-				}),
-				["<S-Tab>"] = cmp.mapping({
-					i = function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
-						else
-							fallback()
-						end
-					end,
-				}),
-			}),
+					end
+				end, { "i", "s" }),
 
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif luasnip.jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+			}),
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
+				{ name = 'luasnip' },
 				{ name = 'buffer' },
 				{ name = 'path' },
-				{ name = 'ultisnips' },
 				{ name = 'calc' },
-			})
+			}),
+			experimental = {
+				ghost_text = true,
+			}
 		})
-
 		cmp.setup.cmdline('/', {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
-				{ name = 'buffer' }
+				{ name = 'buffer' },
 			}
 		})
-
 		cmp.setup.cmdline(':', {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
-				{ name = 'path' }
-			}, {
-				{
-					name = 'cmdline',
-					option = {
-						ignore_cmds = { 'Man', '!' }
-					}
-				}
+				{ name = 'path' },
+				{ name = 'cmdline' }
 			})
 		})
-
-		require("cmp_nvim_ultisnips").setup {}
 	end
 }
