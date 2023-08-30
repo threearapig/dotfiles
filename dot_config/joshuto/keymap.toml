@@ -105,10 +105,11 @@ keymap = [
 	{ keys = [ "m", "m" ],		command = "linemode mtime" },
 
 	{ keys = [ "g", "r" ],		command = "cd /" },
+	{ keys = [ "g", "h" ],		command = "cd ~/" },
 	{ keys = [ "g", "d" ],		command = "cd ~/Downloads" },
 	{ keys = [ "g", "m" ],		command = "cd /run/media/thejc/" },
+	{ keys = [ "g", "c" ],		command = "cd ~/.local/share/chezmoi/" },
 	{ keys = [ "g", "e" ],		command = "cd /etc" },
-	{ keys = [ "g", "h" ],		command = "cd ~/" },
 	{ keys = [ "g", "i" ],		command = "cd ~/Github" },
 	{ keys = [ "g", "f", "f" ],		command = "cd ~/.config" },
 	{ keys = [ "g", "f", "n" ],		command = "cd ~/.config/nvim" },

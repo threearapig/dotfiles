@@ -44,8 +44,6 @@
 		}
 	},
 
-
-
 	"battery": {
 		"states": {
 			"good": 95,
