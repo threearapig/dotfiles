@@ -9,7 +9,6 @@ bindkey -M vicmd "I" vi-end-of-line
 bindkey -M vicmd "e" down-line-or-history
 bindkey -M vicmd "u" up-line-or-history
 bindkey -M vicmd "l" undo
-bindkey -M vicmd "-" vi-rev-repeat-search
 bindkey -M vicmd "=" vi-repeat-search
 bindkey -M vicmd "h" vi-forward-word-end
 
