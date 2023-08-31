@@ -10,12 +10,13 @@
 * dunst
 * nm-applet
 * pasystray
+* blueberry
 * udiskie
 
 > waybar, fcitx5 and dunst are installed separately
 
 ```bash
-paru -S swww-git network-manager-applet pasystray-wayland udiskie
+paru -S swww-git network-manager-applet pasystray-wayland blueberry-wayland udiskie
 ```
 
 ### installation
@@ -140,14 +141,63 @@ paru -S neovim-git
 
 ## Fcitx5
 
+### installation
+
 ```bash
 paru -S fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-zhwiki fcitx5-nord
 ```
+
+### configuration
+
+Next, set the environment variable
+
+Edit the file: `/etc/environment`  
+
+```bash
+sudo vim /etc/environment
+```
+
+Append the following  
+
+```environment
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus
+```
+
+
+## zsh
+
+### installation
+
+```bash
+paru -S zsh
+```
+
+### configuration
+
+configure zsh via zim  
 
 
 
 
 ## Software
+
+**Some Software has been installed before**  
+
+
+### Browser
+
+* chrome
+* firefox
+* chromium
+
+```bash
+paru -S google-chrome firefox chromium
+```
+
 
 ### wine
 
@@ -160,63 +210,79 @@ ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-li
 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
-
-### OBS
-
-```bash
-paru -S obs-studio xdg-desktop-portal-hyprland
-```
-
-
-
-### Screenshot
-
-* `grim` + `slurp`
+configure with the following command:  
 
 ```bash
-paru -S grim-git slurp-git
-```
-
-
-### Reader
-
-```bash
-paru -S okular
+winecfg
 ```
 
 
 ### Communication
 
-* `linuxqq`
-* `telegram`
-* `wemeet`
+* linuxqq
+* telegram
+* wemeet
 
 ```bash
 paru -S linuxqq telegram-desktop wemeet-bin discord
 ```
 
 
-### Office
+### office
+
+* libreoffice
 
 ```bash
 paru -S libreoffice-still libreoffice-still-zh-cn libreoffice-still-en-gb
-paru -S wps-office-cn ttf-wps-fonts libtiff5
 ```
 
+
+### video
+
+* mpv
+
+```bash
+paru -S mpv-git
+```
+
+
+### Music
+
+* yesplaymusic
+* listen1
+
+```bash
+paru -S yesplaymusic listen1-desktop-appimage
+```
 
 
 ### Game
 
-* `winegame 游戏助手`
+* winegame 游戏助手
 
 winegame 游戏助手前往官网安装  
 
 
 
-### Music
-
-* `yesplaymusic`
+### PDF Reader
 
 ```bash
-paru -S yesplaymusic
+paru -S okular
+```
+
+
+### Screen Recording
+
+```bash
+paru -S obs-studio xdg-desktop-portal-hyprland
+```
+
+
+### Screenshot
+
+* grim
+* slurp
+
+```bash
+paru -S grim-git slurp-git
 ```
