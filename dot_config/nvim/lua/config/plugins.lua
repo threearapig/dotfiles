@@ -34,6 +34,7 @@ require("lazy").setup({
 		require("config.plugins.core.telescope"),
 		require("config.plugins.core.lsp"),
 		require("config.plugins.core.cmp"),
+		require("config.plugins.core.snippets"),
 		-- UI
 		require("config.plugins.ui.colorscheme"),
 		require("config.plugins.ui.statusline"),

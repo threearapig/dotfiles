@@ -286,3 +286,11 @@ paru -S obs-studio xdg-desktop-portal-hyprland
 ```bash
 paru -S grim-git slurp-git
 ```
+
+### Othre
+
+* neofetch
+
+```bash
+paru -S neofetch-git
+```
