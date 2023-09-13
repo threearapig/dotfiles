@@ -116,10 +116,10 @@ return {
 			},
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
-				{ name = 'ultisnips' },
 				{ name = 'buffer' },
 				{ name = 'path'},
 				{ name = 'calc'},
+				--{ name = 'ultisnips' },  -- 开启，会卡顿
 			}),
 			mapping = cmp.mapping.preset.insert({
 				['<C-o>'] = cmp.mapping.complete(),
