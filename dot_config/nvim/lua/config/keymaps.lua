@@ -66,6 +66,7 @@ local nmappings = {
 
 	-- Plugins
 	{ from = "<leader>ra", to = ":Joshuto<CR>" },
+	{ from = "tt", to = ":NvimTreeToggle<CR>" },
 }
 
 for _, mapping in ipairs(nmappings) do

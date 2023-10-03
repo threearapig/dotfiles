@@ -1,14 +1,3 @@
-local has_words_before = function()
-	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-local limitStr = function(str)
-	if #str > 25 then
-		str = string.sub(str, 1, 22) .. "..."
-	end
-	return str
-end
-
 local setCompHL = function()
 	local fgdark = "#2E3440"
 
@@ -56,7 +45,6 @@ end
 return {
 	"hrsh7th/nvim-cmp",
 	event = { "BufReadPost", "BufNewFile" },
-	after = "SirVer/ultisnips",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
@@ -65,6 +53,10 @@ return {
 		"hrsh7th/cmp-calc",
 		{
 			"quangnguyen30192/cmp-nvim-ultisnips",
+			dependencies = {
+				"SirVer/ultisnips",
+				"honza/vim-snippets",
+			},
 			config = function()
 				require("cmp_nvim_ultisnips").setup {}
 			end,
@@ -82,6 +74,16 @@ return {
 		local cmp = require("cmp")
 		local lspkind = require("lspkind")
 		local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+		local has_words_before = function()
+			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+		end
+		local limitStr = function(str)
+			if #str > 25 then
+				str = string.sub(str, 1, 22) .. "..."
+			end
+			return str
+		end
 
 		cmp.setup({
 			preselect = cmp.PreselectMode.None,
@@ -92,7 +94,6 @@ return {
 			},
 			window = {
 				completion = {
-					-- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 					col_offset = -3,
 					side_padding = 0,
 				},
@@ -110,7 +111,6 @@ return {
 					local strings = vim.split(kind.kind, "%s", { trimempty = true })
 					kind.kind = " " .. (strings[1] or "") .. " "
 					kind.menu = limitStr(entry:get_completion_item().detail or "")
-
 					return kind
 				end,
 			},
@@ -119,7 +119,7 @@ return {
 				{ name = 'buffer' },
 				{ name = 'path'},
 				{ name = 'calc'},
-				--{ name = 'ultisnips' },  -- 开启，会卡顿
+				--{ name = 'ultisnips' },  -- 开启，补全的时候会卡顿
 			}),
 			mapping = cmp.mapping.preset.insert({
 				['<C-o>'] = cmp.mapping.complete(),
@@ -181,7 +181,6 @@ return {
         { name = 'buffer' }
       }
     })
-
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
@@ -195,6 +194,5 @@ return {
         }
       })
     })
-
 	end
 }

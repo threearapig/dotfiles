@@ -1,4 +1,5 @@
 vim.b.fileenconding = "utf-8"
+vim.o.mouse = ''
 vim.o.scrolloff = 4
 vim.o.number = true
 vim.o.relativenumber = true

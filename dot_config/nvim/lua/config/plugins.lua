@@ -34,7 +34,6 @@ require("lazy").setup({
 		require("config.plugins.core.telescope"),
 		require("config.plugins.core.lsp"),
 		require("config.plugins.core.cmp"),
-		require("config.plugins.core.snippets"),
 		-- UI
 		require("config.plugins.ui.colorscheme"),
 		require("config.plugins.ui.statusline"),
@@ -44,12 +43,13 @@ require("lazy").setup({
 		require("config.plugins.ui.scrollbar"),
 		require("config.plugins.ui.window-management"),
 		-- Tools
-		require("config.plugins.tools.git"),
-		require("config.plugins.tools.editor"),
-		require("config.plugins.tools.undo"),
-		require("config.plugins.tools.markdown"),
 		require("config.plugins.tools.winbar"),
+		require("config.plugins.tools.tree"),
+		require("config.plugins.tools.undo"),
+		require("config.plugins.tools.editor"),
+		require("config.plugins.tools.git"),
 		require("config.plugins.tools.joshuto"),
+		require("config.plugins.tools.markdown"),
 })
 
 -- Other
