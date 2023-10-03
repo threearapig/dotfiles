@@ -1,50 +1,61 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher", "cpu", "memory", "network"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["custom/wallpaper", "backlight", "pulseaudio", "battery", "clock", "tray"],
+	"position": "top",
+	"height": 30,
+	"margin-bottom":6,
+	"modules-left": ["hyprland/workspaces", "custom/spaceright", "hyprland/window"],
+	"modules-right": [ "network", "cpu", "memory", "pulseaudio", "battery", "clock", "tray"],
+
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"1":"󰎤",
+			"2":"󰎧",
+			"3":"󰎪",
+			"4":"󰎭",
+			"5":"󰎱",
+			"6":"󰎳",
+			"7":"󰎶",
+			"8":"󰎹",
+			"9":"󰎼",
+		},
+	},
+
+	"custom/spaceright":{
+		"tooltip":false,
+		"format": "",
+	},
+
+	"network": {
+		"tooltip":false,
+		"interval": 2,
+		"format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+	},
 
 	"cpu": {
 		"interval": 15,
 		"format": " {}%",
-		"max-length": 10
 	},
 
 	"memory": {
 		"interval": 30,
 		"format": " {}%",
-		"max-length": 10
-	},
-
-	"network": {
-		"tooltip": false,
-		"format-wifi": "  {essid}",
-		"format-ethernet": ""
-	},
-
-	"tray": {
-		"icon-size":18,
-		"spacing": 10,
-		"reverse-direction": true
-	},
-	
-	"backlight": {
-		"format": "{icon} {percent}%",
-		"format-icons": ["", "", "", "", "", "", "", "", ""]
 	},
 
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
 		"format": "{icon} {volume}%",
-		"format-muted": "{icon} {volume}%",
+		"format-muted": "󰝟 {volume}%",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
-		}
+		},
 	},
 
 	"battery": {
+		"tooltip":false,
 		"states": {
 			"good": 95,
 			"warning": 30,
@@ -54,21 +65,17 @@
 		"format-charging": " {capacity}%",
 		"format-plugged": " {capacity}%",
 		"format-alt": "{time} {icon}",
-		"format-icons": ["", "", "", "", ""]
+		"format-icons": ["", "", "", "", ""],
 	},
 
 	"clock": {
-		"format": "{: %I:%M %p   %d/%m/%Y}"
+		"tooltip":false,
+		"format": "{: %I:%M %p   %d/%m/%Y}",
 	},
 
-	"custom/launcher": {
-		"format": " ",
-		"on-click": "rofi -show drun",
-		"on-click-right": "killall rofi"
+	"tray": {
+		"icon-size":18,
+		"spacing": 10,
+		"reverse-direction": true
 	},
-
-	"custom/wallpaper": {
-		"format":" ",
-		"on-click": "bash $HOME/.config/system-scripts/hyprland/wallpaper/pkill_wp.sh"
-	}
 }
