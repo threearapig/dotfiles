@@ -2,7 +2,7 @@
 	"layer": "top",
 	"position": "top",
 	"height": 30,
-	"margin-bottom":6,
+	"margin-bottom": 6,
 	"modules-left": ["hyprland/workspaces", "custom/spaceright", "hyprland/window"],
 	"modules-right": [ "network", "cpu", "memory", "pulseaudio", "battery", "clock", "tray"],
 
@@ -10,25 +10,25 @@
 	"hyprland/workspaces": {
 		"format": "{icon}",
 		"format-icons": {
-			"1":"󰎤",
-			"2":"󰎧",
-			"3":"󰎪",
-			"4":"󰎭",
-			"5":"󰎱",
-			"6":"󰎳",
-			"7":"󰎶",
-			"8":"󰎹",
-			"9":"󰎼",
+			"1": "󰎤",
+			"2": "󰎧",
+			"3": "󰎪",
+			"4": "󰎭",
+			"5": "󰎱",
+			"6": "󰎳",
+			"7": "󰎶",
+			"8": "󰎹",
+			"9": "󰎼",
 		},
 	},
 
 	"custom/spaceright":{
-		"tooltip":false,
+		"tooltip": false,
 		"format": "",
 	},
 
 	"network": {
-		"tooltip":false,
+		"tooltip": false,
 		"interval": 2,
 		"format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
 	},
@@ -55,26 +55,26 @@
 	},
 
 	"battery": {
-		"tooltip":false,
+		"tooltip": false,
 		"states": {
 			"good": 95,
 			"warning": 30,
 			"critical": 20
 		},
-		"format": "{icon}  {capacity}%",
+		"format": "{icon} {capacity}%",
 		"format-charging": " {capacity}%",
 		"format-plugged": " {capacity}%",
 		"format-alt": "{time} {icon}",
-		"format-icons": ["", "", "", "", ""],
+		"format-icons": [" ", " ", " ", " ", " "],
 	},
 
 	"clock": {
-		"tooltip":false,
+		"tooltip": false,
 		"format": "{: %I:%M %p   %d/%m/%Y}",
 	},
 
 	"tray": {
-		"icon-size":18,
+		"icon-size": 18,
 		"spacing": 10,
 		"reverse-direction": true
 	},
