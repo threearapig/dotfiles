@@ -1,5 +1,6 @@
 alias ra='joshuto'
 alias che='chezmoi'
-alias s='neofetch'
+alias neo='neofetch'
 alias lg='lazygit'
+alias syyu='paru -Syyu'
 alias aliyun='aliyunpan-go'
