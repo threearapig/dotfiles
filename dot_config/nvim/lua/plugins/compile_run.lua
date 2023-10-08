@@ -4,7 +4,7 @@ local compileRun = function()
 	local ft = vim.bo.filetype
 
 	if ft == "markdown" then
-		vim.cmd(":InstantMarkdownPreview")
+		vim.cmd(":MarkdownPreviewToggle")
 	elseif ft == "c" then
 		vim.cmd(":set splitbelow")
 		vim.cmd(":sp")
