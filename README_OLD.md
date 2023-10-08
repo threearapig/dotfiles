@@ -31,12 +31,8 @@ paru -S hyprland-git
 ### requirements
 
 * JetBrainsMono Nerd Font
-* swww
-* rofi
 
 > JetBrainsMono Nerd Font included in dotfiles  
-> swww is already installed in hyprland  
-> rofi is installed separately  
 
 ### installation
 
