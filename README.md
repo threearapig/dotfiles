@@ -107,6 +107,9 @@ lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader l
 
 #### 其他
 
+```bash
+brew install aliyunpan # 阿里云盘CLI
+```
 
 ```bash
 paru -S swww-git # 壁纸
