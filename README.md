@@ -62,6 +62,9 @@ paru -S python-pynvim-git nodejs npm wget unzip yarn
 [Neovim 插件使用](https://github.com/threearapig/dotfiles/blob/master/dot_config/nvim/README.md)
 
 
+---
+
+
 ### 常用软件
 
 
@@ -102,7 +105,7 @@ lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader l
 [Wine游戏助手](https://winegame.net/downloads/)  
 
 
-#### 直接安装
+#### 其他
 
 
 ```bash
@@ -117,6 +120,8 @@ paru -S swappy-git # 图片查看器
 paru -S obs-studio xdg-desktop-portal-hyprland # 视频录制
 paru -S libreoffice-still libreoffice-still-zh-cn libreoffice-still-en-gb # 办公套件
 paru -S network-manager-applet pasystray-wayland blueberry-wayland udiskie # 系统托盘软件
-paru -S neofetch-git
+paru -S neofetch-git # 系统信息
+paru -S unzip # 解压
 paru -S wl-clipboard-git # 剪切板
+paru -S eudic # 词典
 ```
