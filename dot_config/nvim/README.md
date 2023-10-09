@@ -1,19 +1,8 @@
 # Neovim
 
-## Keymaps
+## 基础部分
 
-### Movement
-
-
-
-
-
-
-
-
-## Basic
-
-### Basic Attributes
+### 基础属性
 
 ```lua
 vim.opt.termguicolors = true            -- 开启终端真彩色
@@ -60,7 +49,7 @@ vim.o.completeopt = 'longest,noinsert,menuone,noselect,preview'     -- 插入模
 vim.o.formatoptions = vim.o.formatoptions:gsub('tc', '')            -- 与文本格式化有关，t：根据 textwidth 自动折行，c：在（程序源代码中的）注释中自动折行，插入合适的注释起始字符
 ```
 
-### Other useful settings
+### 其他有用的设置
 
 打开文件后恢复光标上次所在位置  
 
@@ -68,7 +57,7 @@ vim.o.formatoptions = vim.o.formatoptions:gsub('tc', '')            -- 与文本
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
 ```
 
-## Keymaps
+## 按键映射
 
 这里主要是使用一个表结构，通过 `for` 循环来依次加载按键映射  
 
@@ -105,6 +94,62 @@ end
 
 
 
-## Plugins
+## 插件
 
 插件管理器使用 `lazy.nvim`  
+
+### 核心部分
+
+* [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [telescope](https://github.com/nvim-telescope/telescope.nvim)
+    + [plenary](https://github.com/nvim-lua/plenary.nvim)
+    + [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
+    + 依赖 `ripgrep` 和 `fzf` 程序
+* [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
+    + [mason](https://github.com/williamboman/mason.nvim)
+    + [lspconfig](https://github.com/neovim/nvim-lspconfig)
+    + [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
+    + [neodev.nvim](https://github.com/folke/neodev.nvim)
+    + [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+    + [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+    + [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+    + [cmp-path](https://github.com/hrsh7th/cmp-path)
+    + [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
+    + [cmp-nvim-ultisnips](https://github.com/quangnguyen30192/cmp-nvim-ultisnips)
+        + [ultisnips](https://github.com/SirVer/ultisnips)
+        + [vim-snippets](https://github.com/honza/vim-snippets)
+    + [cmp-calc](https://github.com/hrsh7th/cmp-calc)
+    + [lspkind](https://github.com/onsails/lspkind.nvim)
+
+
+### 工具部分
+
+* [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+    + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+        + 需要字体为 [patched font](https://www.nerdfonts.com/)
+* [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+* [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
+* [undotree](https://github.com/mbbill/undotree)
+* [dropbar](https://github.com/Bekaboo/dropbar.nvim)
+
+**编辑**  
+
+* [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+* [bullets](https://github.com/dkarter/bullets.vim)
+* [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
+* [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+* [joshuto.nvim](https://github.com/theniceboy/joshuto.nvim)
+
+### UI 部分
+
+* [nvim-deus](https://github.com/theniceboy/nvim-deus)
+* [hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim)
+* [nvim-notify](https://github.com/rcarriga/nvim-notify)
+* [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
+    + [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
+* [lualine](https://github.com/nvim-lualine/lualine.nvim)
+* [bufferline](https://github.com/akinsho/bufferline.nvim)
+    + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+        + 需要字体为 [patched font](https://www.nerdfonts.com/)
+* [colorful-winsep](https://github.com/nvim-zh/colorful-winsep.nvim)
