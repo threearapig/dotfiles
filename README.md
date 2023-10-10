@@ -21,13 +21,11 @@ paru -S papirus-icon-theme-git            # 图标
 
 ### 核心工具
 
-**安装 [`brew`](https://brew.sh/)**  
-
 
 **核心大件**  
 
 ```bash
-brew install neovim joshuto tmux jesseduffield/lazygit/lazygit zsh
+paru -S neovim-git joshuto tmux-git lazygit-git zsh
 ```
 * Neovim： 我愿称之为 **编辑器之神**
 * Joshuto： 终端文件管理神器，和 `ranger` 一样
@@ -35,20 +33,30 @@ brew install neovim joshuto tmux jesseduffield/lazygit/lazygit zsh
 * Lazygit： Git 客户端，神器
 * zsh：常用的 shell
 
+```bash
+chsh -l # 查看可更换的 shell
+chsh -s /usr/bin/zsh # 更换 shell 为 zsh
+```
+
+```bash
+zimfw install # 安装 zim 模块
+```
+
 
 **搭配食用更佳**  
 
 ```bash
-brew install rainbarf fzf zoxide ripgrep zim
+brew install rainbarf
+```
+
+```bash
+paru -S fzf-git zoxide-git ripgrep-git
 ```
 
 * fzf： 嵌入 `nvim` `joshuto`，非常棒的模糊匹配查找
 * ripgrep：`nvim` 插件 `telescope` 需要
 * rainbarf：`tmux` 的资源显示
 * zoxide：嵌入 `joshuto`，更好的目录跳转
-* zim：模块化配置 zsh
-
-> 通过 [zim](https://zimfw.sh/) 来配置 zsh  
 
 
 **Neovim 依赖**
@@ -56,7 +64,7 @@ brew install rainbarf fzf zoxide ripgrep zim
 如果 Neovim 插件有些有问题，`checkhealth` 一下，看看缺少哪些  
 
 ```bash
-paru -S python-pynvim-git nodejs npm wget unzip yarn
+paru -S python-pynvim-git nodejs npm wget unzip yarn ruby
 ```
 
 [Neovim 插件使用](https://github.com/threearapig/dotfiles/blob/master/dot_config/nvim/README.md)
@@ -84,20 +92,6 @@ XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus
 ```
-
-
-#### wine
-
-```bash
-sudo pacman -S wine wine-mono wine_gecko wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls \
-mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error \
-lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo \
-sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama \
-ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 \
-lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
-```
-
-通过命令 `winecfg` 来进行配置  
 
 
 #### 游戏
