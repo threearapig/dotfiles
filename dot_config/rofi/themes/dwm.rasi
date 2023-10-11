@@ -6,8 +6,8 @@
   height: 300px;
   location: 0;
   spacing: 0;
-  transparent: rgba(51,51,51,0.95);
-  transparent-light: rgba(55,71,79);
+  transparent: rgba(51, 51, 51, 0.8);
+  transparent-light: rgba(55, 71, 79, 0.8);
 }
 
 window {

@@ -1,4 +1,5 @@
 export EDITOR='nvim'
+export QT_STYLE_OVERRIDE=kvantum
 export XDG_CONFIG_HOME=$HOME/.config
 export ZIM_CONFIG_FILE=~/.config/zsh/zimrc
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
