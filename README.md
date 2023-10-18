@@ -9,12 +9,14 @@
 * rofi
 * alacritty
 * dunst
+* swaylock
 
 ```bash
 paru -S hyprland-git waybar-hyprland-git
 paru -S rofi-git
 paru -S alacritty-git
 paru -S dunst-git
+paru -S swaylock-effects-git
 ```
 
 ### 核心工具
@@ -202,6 +204,6 @@ paru -S htop                      # 系统资源管理
 paru -S unzip                     # 解压
 paru -S eudic                     # 词典
 paru -S neofetch-git              # 系统信息
-paru -S libreoffice-still libreoffice-still-zh-cn libreoffice-still-en-gb       # 办公套件
-paru -S network-manager-applet pasystray-wayland blueberry-wayland udiskie      # 系统托盘软件
+paru -S network-manager-applet pasystray-wayland blueberry-wayland udiskie                  # 系统托盘软件
+paru -S libreoffice-fresh libreoffice-fresh-zh-cn wps-office-cn ttf-wps-fonts libtiff5      # 办公套件
 ```

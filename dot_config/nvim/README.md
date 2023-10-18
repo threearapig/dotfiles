@@ -139,6 +139,7 @@ end
 * [bullets](https://github.com/dkarter/bullets.vim)
 * [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 * [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+* [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 * [joshuto.nvim](https://github.com/theniceboy/joshuto.nvim)
 
 ### UI 部分

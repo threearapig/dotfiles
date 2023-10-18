@@ -47,6 +47,7 @@ require("lazy").setup({
 		require("config.plugins.tools.tree"),
 		require("config.plugins.tools.undo"),
 		require("config.plugins.tools.editor"),
+		require("config.plugins.tools.comment"),
 		require("config.plugins.tools.git"),
 		require("config.plugins.tools.joshuto"),
 		require("config.plugins.tools.markdown"),
