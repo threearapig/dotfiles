@@ -1,14 +1,15 @@
 return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
+	"theniceboy/nvim-deus",
+	lazy = false,
+	priority = 1000,
 	config = function ()
-		vim.cmd[[colorscheme tokyonight]]
+		vim.cmd[[colorscheme deus]]
 	end
-	-- "theniceboy/nvim-deus",
-	-- lazy = false,
-	-- priority = 1000,
+
+ --  "folke/tokyonight.nvim",
+ --  lazy = false,
+ --  priority = 1000,
 	-- config = function ()
-	-- 	vim.cmd[[colorscheme deus]]
+	-- 	vim.cmd[[colorscheme tokyonight]]
 	-- end
 }
