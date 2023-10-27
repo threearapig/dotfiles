@@ -42,6 +42,7 @@ require("lazy").setup({
 		require("config.plugins.ui.notify"),
 		require("config.plugins.ui.scrollbar"),
 		require("config.plugins.ui.window-management"),
+		require("config.plugins.ui.modes"),
 		-- Tools
 		require("config.plugins.tools.tree"),
 		require("config.plugins.tools.undo"),
