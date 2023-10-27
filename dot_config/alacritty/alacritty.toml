@@ -30,7 +30,7 @@
 	bold_italic.family = "Sauce Code Pro Nerd Font"
 	bold_italic.style = "Bold Italic"
 
-	size = 18
+	size = 15
 
 	offset.x = 1
 	offset.y = 1
