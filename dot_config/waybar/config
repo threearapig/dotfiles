@@ -34,11 +34,13 @@
 	},
 
 	"cpu": {
+		"tooltip": false,
 		"interval": 15,
 		"format": " {}%",
 	},
 
 	"memory": {
+		"tooltip": false,
 		"interval": 30,
 		"format": " {}%",
 	},
