@@ -6,15 +6,15 @@
 
 * hyprland
 * waybar
-* rofi
 * alacritty
+* rofi
 * dunst
 * swaylock
 
 ```bash
-paru -S hyprland-git waybar-hyprland-git
-paru -S rofi-git
+paru -S hyprland-git waybar-git
 paru -S alacritty-git
+paru -S rofi-git
 paru -S dunst-git
 paru -S swaylock-effects-git
 ```
@@ -29,20 +29,16 @@ paru -S swaylock-effects-git
 * zsh
 
 ```bash
-paru -S neovim-git
+paru -S neovim
 paru -S joshuto
-paru -S tmux-git
-paru -S lazygit-git
-paru -S fzf-git
+paru -S tmux
+paru -S lazygit
+paru -S fzf
 paru -S zsh
 ```
 
 ```bash
 chsh -s /usr/bin/zsh
-```
-
-```bash
-zimfw install
 ```
 
 
@@ -59,7 +55,7 @@ brew install rainbarf         # 资源监视器
 如果 Neovim 插件有些有问题，`checkhealth` 一下，看看缺少哪些  
 
 ```bash
-paru -S python-pynvim-git nodejs npm wget unzip yarn ruby ripgrep-git
+paru -S python-pynvim nodejs npm wget unzip yarn ruby ripgrep
 ```
 
 [Neovim 插件使用](https://github.com/threearapig/dotfiles/blob/master/dot_config/nvim/README.md)
@@ -122,6 +118,12 @@ paru -S ttf-linux-libertine ttf-inconsolata ttf-joypixels ttf-twemoji-color noto
 paru -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 ```
 
+**dunst 需要**
+
+```bash
+paru -S apple-fonts
+```
+
 
 #### 输入法
 
@@ -144,19 +146,35 @@ GLFW_IM_MODULE=ibus
 #### 主题
 
 ```bash
-paru -S kvantum                 # qt 设置编辑器
-paru -S nwg-look-bin            # gtk 设置编辑器
-paru -S adapta-gtk-theme        # adapta 主题
-paru -S papirus-icon-theme      # papirus 图标主题
-paru -S bibata-cursor-theme     # bibata 光标主题
+paru -S kvantum                    # qt 设置编辑器
+paru -S nwg-look-bin               # gtk 设置编辑器
+paru -S adapta-gtk-theme           # adapta 主题
+paru -S papirus-icon-theme         # papirus 图标主题
+paru -S kora-icon-theme-git        # kora 主题图标（dunst）
+paru -S bibata-cursor-theme        # bibata 光标主题
+paru -S qt5-wayland qt6-wayland    # qt wayland support
 ```
 
+### 额外操作
+
+```bash
+mkdir ~/Desktop
+mkdir ~/Documents
+mkdir ~/Downloads
+mkdir ~/Music
+mkdir ~/Pictures
+mkdir ~/Public
+mkdir ~/Templates
+mkdir ~/Videos
+mkdir ~/GitHub
+mkdir ~/Notes
+mkdir ~/Videos/OBS
+```
 
 ### 常用应用
 
-#### 游戏
 
-安装 `wine`  
+#### wine
 
 ```bash
 paru -S wine wine-mono wine_gecko wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls \
@@ -167,43 +185,58 @@ ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-li
 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
-[安装 wine 游戏助手](https://winegame.net/downloads/)
 
-将下载后的游戏安装包安装好  
-对于阴阳师，将 `Runners` 设置为适用于 `lol` 版本就行，在 `lutris` 中下载就行，版本选新一点的  
+#### 其他
 
-> 例如 `lutris-ge-lol`  
+```bash
+paru -S swww                                                  # 壁纸
+paru -S yesplaymusic                                          # 音乐
+paru -S firefox chromium                                      # 浏览器
+paru -S linuxqq telegram-desktop discord wemeet-bin           # 通讯
+paru -S nautilus                                              # 图形化文件管理器
+paru -S typora                                                # markdown
+paru -S wechat-uos                                            # 垃圾微信
 
+paru -S network-manager-applet pasystray-wayland blueberry-wayland udiskie          # 系统托盘软件
 
-**注意：需要对安装好的游戏，单独进行运行环境的指定**  
-> Configure -> Runners options -> Wine version
+paru -S libreoffice-fresh libreoffice-fresh-zh-cn wps-office-cn ttf-wps-fonts libtiff5      # 办公套件
 
+paru -S mpv                       # 视频播放器
+paru -S htop                      # 系统资源管理
+paru -S xmind                     # 思维导图
+paru -S unzip                     # 解压
+paru -S okular                    # PDF 阅读器
+paru -S neofetch                  # 系统信息
+paru -S eusoft-eudic-bin          # 词典
+paru -S qimgv-git                 # 图片查看
+paru -S swappy                    # 图片编辑
+paru -S man man-pages             # man 手册
+paru -S net-tools                 # 网络工具集
+
+# 屏幕共享 + 录屏
+paru -S pipewire wireplumber
+paru -S xdg-desktop-portal-hyprland obs-studio
+
+# 截图
+## hyprshot 命令行启动截图
+## hyprshot-gui-git 图形化启动截图（功能更多）
+paru -S grim slurp hyprshot hyprshot-gui-git
+# 剪切板 + 剪切板管理
+paru -S wl-clipboard wl-clip-persist-git cliphist
+
+# 身份验证代理
+paru -S polkit-kde-agent
+```
 
 #### 云盘
+
+> 阿里云服务端限制了下载大小，所以好像废了  
 
 ```bash
 brew install aliyunpan      # 阿里云盘CLI
 ```
 
+#### 游戏
 
-#### 其他
-
-```bash
-paru -S mpv                                                   # 视频播放器
-paru -S okular                                                # PDF 阅读器
-paru -S swww-git                                              # 壁纸
-paru -S qimgv-git swappy-git                                  # 图片查看/编辑
-paru -S wl-clipboard-git                                      # 剪切板
-paru -S grim-git slurp-git                                    # 截图
-paru -S google-chrome firefox chromium                        # 浏览器
-paru -S yesplaymusic listen1-desktop-appimage                 # 音乐
-paru -S obs-studio xdg-desktop-portal-hyprland                # 视频录制
-paru -S linuxqq telegram-desktop discord wemeet-bin           # 通讯
-
-paru -S htop                      # 系统资源管理
-paru -S unzip                     # 解压
-paru -S eudic                     # 词典
-paru -S neofetch-git              # 系统信息
-paru -S network-manager-applet pasystray-wayland blueberry-wayland udiskie                  # 系统托盘软件
-paru -S libreoffice-fresh libreoffice-fresh-zh-cn wps-office-cn ttf-wps-fonts libtiff5      # 办公套件
-```
+通过 [winegame游戏助手](https://winegame.net/downloads/) 下载并运行阴阳师  
+注意：**安装好阴阳师后，需要在 winegame游戏助手 中将运行阴阳师的wine版本切换成 lol 版本**  
