@@ -44,16 +44,14 @@ require("lazy").setup({
 		require("config.plugins.ui.window-management"),
 		require("config.plugins.ui.modes"),
 		-- Tools
-		require("config.plugins.tools.tree"),
 		require("config.plugins.tools.undo"),
 		require("config.plugins.tools.editor"),
 		require("config.plugins.tools.comment"),
 		require("config.plugins.tools.git"),
 		require("config.plugins.tools.joshuto"),
 		require("config.plugins.tools.markdown"),
-		-- require("config.plugins.tools.winbar"),
+		require("config.plugins.tools.fcitx"),
 })
 
 -- Other
-require("plugins.fcitx5")
 require("plugins.compile_run")

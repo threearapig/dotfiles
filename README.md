@@ -9,15 +9,17 @@
 * alacritty
 * rofi
 * dunst
-* swaylock
+* swaylock/hyprlock
 
 ```bash
-paru -S hyprland-git waybar-git
-paru -S alacritty-git
-paru -S rofi-git
-paru -S dunst-git
-paru -S swaylock-effects-git
+paru -S hyprland waybar alacritty rofi-lbonn-wayland-git dunst hyprlock-git swaylock-effects
 ```
+
+> 正常版本的rofi在hyprlnad下启动时会失去焦点，rofi-lbonn-wayland-git 这个包可以解决  
+> hyprlock 长时间使用会卡死  
+
+
+
 
 ### 核心工具
 
@@ -29,18 +31,21 @@ paru -S swaylock-effects-git
 * zsh
 
 ```bash
-paru -S neovim
-paru -S joshuto
-paru -S tmux
-paru -S lazygit
-paru -S fzf
-paru -S zsh
+paru -S neovim lazygit joshuto tmux fzf zsh
 ```
 
 ```bash
 chsh -s /usr/bin/zsh
 ```
 
+**joshuto 需要**  
+
+* bat（提供语法高亮）
+* ueberzugpp（显示图片）
+
+```bash
+paru -S bat ueberzugpp
+```
 
 **Tmux 需要**  
 
@@ -135,7 +140,6 @@ paru -S fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-zhwiki fcitx5-nord
 添加以下内容：  
 
 ```environment
-GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
@@ -155,6 +159,8 @@ paru -S bibata-cursor-theme        # bibata 光标主题
 paru -S qt5-wayland qt6-wayland    # qt wayland support
 ```
 
+
+
 ### 额外操作
 
 ```bash
@@ -168,8 +174,26 @@ mkdir ~/Templates
 mkdir ~/Videos
 mkdir ~/GitHub
 mkdir ~/Notes
-mkdir ~/Videos/OBS
 ```
+
+### Hyprland 必要软件
+
+```bash
+# 屏幕共享 + 录屏
+paru -S pipewire wireplumber
+paru -S xdg-desktop-portal-hyprland obs-studio
+
+# 截图
+## hyprshot 命令行启动截图
+## hyprshot-gui-git 图形化启动截图（功能更多）
+paru -S grim slurp hyprshot hyprshot-gui-git
+# 剪切板 + 剪切板管理
+paru -S wl-clipboard wl-clip-persist-git cliphist
+
+# 身份验证代理
+paru -S polkit-kde-agent
+```
+
 
 ### 常用应用
 
@@ -189,54 +213,55 @@ lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader l
 #### 其他
 
 ```bash
-paru -S swww                                                  # 壁纸
-paru -S yesplaymusic                                          # 音乐
-paru -S firefox chromium                                      # 浏览器
-paru -S linuxqq telegram-desktop discord wemeet-bin           # 通讯
-paru -S nautilus                                              # 图形化文件管理器
-paru -S typora                                                # markdown
-paru -S wechat-uos                                            # 垃圾微信
+paru -S swww                                                              # 壁纸
+paru -S nautilus                                                          # 文件
+paru -S yesplaymusic                                                      # 音乐
+paru -S firefox chromium                                                  # 浏览器
 
+paru -S linuxqq wechat-universal-bwrap telegram-desktop discord wemeet-bin          # 通讯
 paru -S network-manager-applet pasystray-wayland blueberry-wayland udiskie          # 系统托盘软件
-
-paru -S libreoffice-fresh libreoffice-fresh-zh-cn wps-office-cn ttf-wps-fonts libtiff5      # 办公套件
 
 paru -S mpv                       # 视频播放器
 paru -S htop                      # 系统资源管理
-paru -S xmind                     # 思维导图
-paru -S unzip                     # 解压
-paru -S okular                    # PDF 阅读器
 paru -S neofetch                  # 系统信息
-paru -S eusoft-eudic-bin          # 词典
-paru -S qimgv-git                 # 图片查看
-paru -S swappy                    # 图片编辑
-paru -S man man-pages             # man 手册
 paru -S net-tools                 # 网络工具集
+paru -S unzip unrar               # 解压工具
+paru -S man man-pages             # man 手册
 
-# 屏幕共享 + 录屏
-paru -S pipewire wireplumber
-paru -S xdg-desktop-portal-hyprland obs-studio
+paru -S swappy                    # 图片编辑
+paru -S qimgv-git                 # 图片查看
+paru -S evince okular             # PDF 阅读器
+paru -S eusoft-eudic-bin          # 欧路词典
+paru -S drawio-desktop-bin        # 画图工具
 
-# 截图
-## hyprshot 命令行启动截图
-## hyprshot-gui-git 图形化启动截图（功能更多）
-paru -S grim slurp hyprshot hyprshot-gui-git
-# 剪切板 + 剪切板管理
-paru -S wl-clipboard wl-clip-persist-git cliphist
-
-# 身份验证代理
-paru -S polkit-kde-agent
+paru -S typora                    # markdown
+paru -S libreoffice-fresh libreoffice-fresh-zh-cn wps-office-cn ttf-wps-fonts libtiff5      # 办公套件
 ```
 
-#### 云盘
 
-> 阿里云服务端限制了下载大小，所以好像废了  
+#### 云盘
 
 ```bash
 brew install aliyunpan      # 阿里云盘CLI
 ```
 
-#### 游戏
+#### grub 美化
 
-通过 [winegame游戏助手](https://winegame.net/downloads/) 下载并运行阴阳师  
-注意：**安装好阴阳师后，需要在 winegame游戏助手 中将运行阴阳师的wine版本切换成 lol 版本**  
+grub 在系统安装部分就已经安装过了，现在这部分只是将 grub 美化一下  
+
+通过 [grub2-themes](grubhttps://github.com/vinceliuice/grub2-themes) 来美化，根据官方安装步骤安装即可  
+
+
+
+### 注意事项
+
+如果使用双系统方案：windows + linux  
+由于两个系统的默认同步BIOS始终方式不同，导致时间冲突  
+> linux 使用 UTC  
+> windows 使用 RTC  
+
+解决方法是将 linux 的同步时间方式改为 rtc  
+
+```bash
+sudo timedatectl set-local-rtc 1
+```

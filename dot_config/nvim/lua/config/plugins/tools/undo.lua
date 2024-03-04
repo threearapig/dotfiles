@@ -1,7 +1,10 @@
 return {
 	{
 		"mbbill/undotree",
-		keys = { "L" },
+		cmd = "UndotreeToggle",
+		keys = {
+			{"L", ":UndotreeToggle<CR>", desc = "undotree"}
+		},
 		config = function()
 			vim.cmd([[
 				noremap L :UndotreeToggle<CR>

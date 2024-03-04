@@ -1,7 +1,7 @@
 font=JetBrainsMonoNerdFont
 font-size=65
 
-image=$HOME/.wallpapers/wallhaven/wallhaven-yx8z2g.png
+image=$HOME/.config/swaylock/lock/img/lock.png
 
 fade-in=0.6
 effect-blur=20x2

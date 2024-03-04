@@ -27,11 +27,6 @@ local nmappings = {
 	{ from = "k",             to = "i",                                                                   mode = mode_nv },
 	{ from = "K",             to = "I",                                                                   mode = mode_nv },
 
-	-- Useful actions
-	{ from = ",v",            to = "v%" },
-	{ from = "\\v",           to = "v$h", },
-	{ from = "<c-a>",         to = "<ESC>A",                                                              mode = mode_i },
-
 	-- Window & splits
 	{ from = "<leader>w",     to = "<C-w>w", },
 	{ from = "<leader>u",     to = "<C-w>k", },
@@ -63,10 +58,6 @@ local nmappings = {
 	{ from = "<leader>sw",    to = ":set wrap<CR>" },
 	{ from = "<leader><CR>",  to = ":nohlsearch<CR>" },
 	{ from = "<leader><esc>", to = "<nop>" },
-
-	-- Plugins
-	{ from = "<leader>ra", to = ":Joshuto<CR>" },
-	{ from = "tt", to = ":NvimTreeToggle<CR>" },
 }
 
 for _, mapping in ipairs(nmappings) do
