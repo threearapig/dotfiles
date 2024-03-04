@@ -1,7 +1,8 @@
 configuration {
-	modes: "drun,run";
+	modes: "drun";
 	show-icons: true;
 	icon-theme: "Papirus";
+  display-drun: "App";
 }
 
 @theme "./themes/dwm.rasi"
