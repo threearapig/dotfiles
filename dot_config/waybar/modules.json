@@ -1,0 +1,78 @@
+{
+	"custom/systemicon":{
+		"tooltip": false,
+		"format": "󰣇",
+	},
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"1": "󰎤",
+			"2": "󰎧",
+			"3": "󰎪",
+			"4": "󰎭",
+			"5": "󰎱",
+			"6": "󰎳",
+			"7": "󰎶",
+			"8": "󰎹",
+			"9": "󰎼",
+			"10": "󰽽"
+		},
+	},
+
+	"custom/redirectsymbol":{
+		"tooltip": false,
+		"format": "",
+	},
+
+	"hyprland/window": {
+		"format": "{title}",
+	},
+
+	"network": {
+		"tooltip": false,
+		"interval": 2,
+		"format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+	},
+
+	"cpu": {
+		"tooltip": false,
+		"interval": 15,
+		"format": " {}%",
+	},
+
+	"memory": {
+		"tooltip": false,
+		"interval": 30,
+		"format": " {}%",
+	},
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟 {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+	},
+
+	"battery": {
+		"tooltip": false,
+		"format": "{icon} {capacity}%",
+		"format-icons": [" ", " ", " ", " ", " "],
+	},
+
+	"clock": {
+		"tooltip": true,
+		"format": " {:%I:%M %p}",
+		"tooltip-format": "  {:%d/%m/%Y}",
+	},
+
+	"tray": {
+		"icon-size": 18,
+		"spacing": 15,
+		"reverse-direction": true
+	},
+}
