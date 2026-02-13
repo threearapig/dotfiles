@@ -4,28 +4,9 @@
 
 [mgr]
 prepend_keymap = [
-	{ on = "i", run = 'plugin smart-enter' },
-	{ on = "<Enter>", run = 'plugin smart-enter' },
+	{ on = "i", run = "enter" },
+	{ on = "<Enter>", run = 'open' },
 	{ on = "S", run = 'shell "$SHELL" --block --confirm' },
-	{ on = [
-		"'",
-		"a",
-	], run = "plugin yamb save", desc = "Add bookmark" },
-	{ on = [
-		"'",
-		"'",
-	], run = "plugin yamb jump_by_fzf", desc = "Jump bookmark by fzf" },
-	{ on = [
-		"'",
-		"r",
-	], run = "plugin yamb delete_by_key", desc = "Delete bookmark by key" },
-	{ on = [
-		"P",
-	], run = "spot", desc = "Open spotter" },
-	{ on = [
-		"c",
-		"a",
-	], run = "plugin compress", desc = "Archive selected files" },
 ]
 
 keymap = [

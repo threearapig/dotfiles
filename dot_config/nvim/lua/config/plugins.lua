@@ -30,26 +30,26 @@ end
 
 require("lazy").setup({
 		-- Core
-		require("config.plugins.core.treesitter"),
-		require("config.plugins.core.telescope"),
-		require("config.plugins.core.lsp"),
-		require("config.plugins.core.cmp"),
+		-- require("config.plugins.core.treesitter"),
+		-- require("config.plugins.core.telescope"),
+		-- require("config.plugins.core.lsp"),
+		-- require("config.plugins.core.cmp"),
 		-- UI
 		require("config.plugins.ui.colorscheme"),
 		require("config.plugins.ui.statusline"),
 		require("config.plugins.ui.tabline"),
 		require("config.plugins.ui.indent"),
 		require("config.plugins.ui.notify"),
-		require("config.plugins.ui.scrollbar"),
+		-- require("config.plugins.ui.scrollbar"),
 		require("config.plugins.ui.window-management"),
-		require("config.plugins.ui.modes"),
+		-- require("config.plugins.ui.modes"),
 		-- Tools
 		require("config.plugins.tools.undo"),
 		require("config.plugins.tools.editor"),
 		require("config.plugins.tools.comment"),
-		require("config.plugins.tools.git"),
-		require("config.plugins.tools.joshuto"),
-		require("config.plugins.tools.markdown"),
+		-- require("config.plugins.tools.git"),
+		-- require("config.plugins.tools.joshuto"),
+		-- require("config.plugins.tools.markdown"),
 		require("config.plugins.tools.fcitx"),
 })
 
